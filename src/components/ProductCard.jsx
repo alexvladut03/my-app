@@ -37,9 +37,9 @@ export default function ProductCard({ product }) {
         </h2>
         <p className="text-lg font-bold mt-1">{product.price} RON</p>
       </div>
-      <button className="bg-customBlue text-white px-4 py-1 my-1 rounded-md">
+      <button className="bg-customBlue text-white md:px-2 sm:px-2 px-1 py-1 my-1 rounded-md text-sm sm:text-base">
         Cumpără acum
-        <FaCartPlus className="w-6 h-6 inline ml-2" />
+        <FaCartPlus className="w-4 h-4 sm:w-5 sm:h-5 inline ml-2" />
       </button>
     </div>
   );

@@ -15,7 +15,7 @@ export default function Footer() {
       <button className="px-4 py-1 bg-customBlue text-white rounded-md my-6">
         <span className="opacity-80"> Obtine cea mai buna oferta</span>
       </button>
-      <div className="flex text-black gap-8 ">
+      <div className="flex lg:flex-row flex-col text-center text-black lg:gap-8 gap-2">
         <Link href="/politica-confidentialitate">
           <span>Politica Confidentialitate</span>
         </Link>

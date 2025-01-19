@@ -5,19 +5,19 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <section className="flex bg-gradient-to-r from-customBlue from-20%  to-[#0263A8] to-100% flex-col gap-3 justify-center items-center py-12">
-      <h1 className="text-4xl font-bold text-white">
+    <section className="flex bg-gradient-to-r from-customBlue from-20%  to-[#0263A8] to-100% flex-col gap-3 justify-center items-center lg:py-12 py-6 text-center px-4">
+      <h1 className="lg:text-4xl text-2xl font-bold text-white">
         Compara. Cumpara. Economiseste.
       </h1>
-      <h2 className="text-lg text-center font-semibold mb-6 text-white">
+      <h2 className="lg:text-lg text-md text-center lg:font-semibold mb-6 text-white">
         Gaseste cele mai bune oferte, compara produsele dorite si
         <br /> economiseste bani pe fiecare achizitie.
       </h2>
-      <div className="relative">
+      <div className="relative w-full max-w-[410px] lg:w-96">
         <input
           type="text"
           placeholder="Vreau să cumpăr..."
-          className="rounded-md px-2 py-2 w-96 placeholder:text-gray-600 outline-4 outline-customBlue"
+          className="rounded-md px-2 py-2 lg:w-96 w-full placeholder:text-gray-600 outline-4 outline-customBlue"
         />
         <button className="text-customBlue px-2 absolute right-0 top-[10px]">
           <FaSearch className="text-xl" />
