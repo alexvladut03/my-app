@@ -31,11 +31,6 @@ export default function Products() {
   const handleFilter = () => {
     setOpenFilter(true);
   };
-
-  const closeFilter = () => {
-    setOpenFilter(false);
-  };
-
   return (
     <section className="bg-[#F7F7F7] px-4 lg:px-0">
       <Breadcrumb className="max-w-7xl mx-auto pt-5 border-b-2 border-gray-300 pb-2">

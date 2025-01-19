@@ -45,7 +45,7 @@ export default function ProductPage({ params }) {
   }
 
   return (
-    <section className="bg-white max-w-7xl mx-auto">
+    <section className="bg-white max-w-7xl lg:mx-auto mx-4">
       <Breadcrumb className="pt-5 border-b-2 border-gray-300 pb-2">
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -63,18 +63,20 @@ export default function ProductPage({ params }) {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <div className="flex flex-col md:flex-row gap-8 text-black py-6">
+      <div className="flex flex-col md:flex-row gap-8 text-black py-6 items-center lg:items-start">
         <Image
           src={product.image}
           alt="Imagine produs"
           width={1500}
           height={1500}
-          className="rounded-md p-4 w-1/4"
+          className="lg:p-4 lg:w-1/4 w-2/4"
         />
 
-        <div className="w-3/4">
+        <div className="lg:w-3/4">
           <div className="border-b-2 border-gray-300 mb-4">
-            <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+            <h1 className="lg:text-3xl text-2xl font-bold mb-4">
+              {product.title}
+            </h1>
             <h2 className="text-lg font-bold">Detalii:</h2>
             <p className="text-gray-500 mb-4">{product.title}</p>
             <p className="text-black font-semibold mb-4">
@@ -114,7 +116,7 @@ export default function ProductPage({ params }) {
           <p className="text-gray-400">Vânzător: {product.shop}</p>
         </div>
       </div>
-      <div className="mt-6">
+      <div className="mt-6 border-t-2 pt-4 border-gray-300">
         <p className="text-gray-300">S-ar putea sa-ti placa si...</p>
         <h2 className="text-2xl font-bold text-black ">Produse similare</h2>
         <Carousel
@@ -129,15 +131,15 @@ export default function ProductPage({ params }) {
             {products.map((product) => (
               <CarouselItem
                 key={product.id}
-                className="md:basis-1/2 lg:basis-1/4"
+                className="basis-1/2 md:basis-1/3 lg:basis-1/3 xl:basis-1/4"
               >
                 <ProductCard product={product} />
                 {console.log(product)}
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="customScreenBreak:block hidden" />
+          <CarouselNext className="customScreenBreak:block hidden" />
         </Carousel>
       </div>
     </section>

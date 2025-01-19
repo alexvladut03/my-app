@@ -54,7 +54,6 @@ export default function NavBar() {
           </Link>
         </div>
 
-        {/* Secțiunea de căutare doar pe alte pagini */}
         {pathname !== "/" && (
           <div className=" h-16 w-2/4 items-center bg-customBlue px-10 relative lg:flex hidden">
             <input
@@ -89,22 +88,23 @@ export default function NavBar() {
               />
             )}
           </button>
-
-          {/* Meniu de căutare (condiționat) */}
-          {searchopen && (
-            <div className="absolute top-12 left-0 w-full p-2 bg-white  lg:hidden">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Vreau să cumpăr..."
-                  className="rounded-md px-2 py-2 w-full border border-customBlue placeholder:text-gray-600 outline-4 outline-customBlue"
-                />
-                <button className="text-customBlue px-2 absolute right-0 top-[10px]">
-                  <FaSearch className="text-xl" />
-                </button>
-              </div>
+          <div
+            className={`absolute top-12 left-0 w-full  bg-white lg:hidden transition-all duration-500 overflow-hidden ${
+              searchopen ? "max-h-40" : "max-h-0"
+            }`}
+          >
+            <div className="relative p-2 px-4">
+              <input
+                type="text"
+                placeholder="Vreau să cumpăr..."
+                className="rounded-md px-2 pr-9 py-2 w-full border border-customBlue text-gray-600 placeholder:text-gray-600 outline-4 outline-customBlue"
+              />
+              <button className="text-customBlue px-2 absolute right-4 top-5">
+                <FaSearch className="text-xl" />
+              </button>
             </div>
-          )}
+          </div>
+
           {/* Favorite */}
           <div className="relative">
             <Link href="/favorite">
