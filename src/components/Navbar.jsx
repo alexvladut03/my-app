@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaHeart, FaSearch } from "react-icons/fa";
@@ -16,40 +16,47 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import categories from "../../data/categories";
+import { CgClose } from "react-icons/cg";
 
 export default function NavBar() {
   const { countFavorites } = useFavorites();
   const pathname = usePathname();
+  const [searchopen, setSearchopen] = useState(false);
+
+  const handleSearch = () => {
+    setSearchopen(!searchopen);
+    console.log(searchopen);
+  };
 
   return (
     <nav
       className={`${
         pathname === "/"
           ? "bg-white"
-          : "bg-gradient-to-r from-white from-50% to-customBlue to-70% drop-shadow-[0_4px_6px_rgba(0,139,234,0.3)]"
+          : "bg-gradient-to-r from-white lg:from-50% from-40% to-customBlue lg:to-60% to-40% drop-shadow-[0_4px_6px_rgba(0,139,234,0.3)]"
       }`}
     >
       <div
-        className={`max-w-7xl flex items-center mx-auto h-16 ${
+        className={`lg:max-w-7xl flex items-center lg:mx-auto lg:h-16 h-12 mx-4 ${
           pathname === "/" ? "justify-between" : ""
         }`}
       >
         {/* Logo-ul */}
-        <div className="flex w-1/4">
+        <div className="flex lg:w-1/4 w-2/5">
           <Link href="/">
             <Image
               src="/LogoKLAUSNETIC.png"
               alt="KLAUSNETIC"
               width={500}
               height={500}
-              className="h-14 w-64"
+              className="lg:h-14 lg:w-64 w-[135px] h-8"
             />
           </Link>
         </div>
 
         {/* Secțiunea de căutare doar pe alte pagini */}
         {pathname !== "/" && (
-          <div className="flex h-16 w-2/4 items-center bg-customBlue px-10 relative">
+          <div className=" h-16 w-2/4 items-center bg-customBlue px-10 relative lg:flex hidden">
             <input
               type="text"
               placeholder="Vreau să cumpăr..."
@@ -63,15 +70,47 @@ export default function NavBar() {
 
         {/* Iconițele din dreapta */}
         <div
-          className={`flex gap-4 justify-end items-center w-1/4 ${
+          className={`flex gap-4 justify-end items-center mt-2 lg:mt-0 lg:w-1/4 w-3/5 ${
             pathname === "/" ? "text-customBlue" : "text-white"
           }`}
         >
+          <button onClick={handleSearch}>
+            {searchopen ? (
+              <CgClose
+                className={`w-8 h-8 lg:hidden ${
+                  pathname === "/" ? "hidden" : "inline"
+                }`}
+              />
+            ) : (
+              <FaSearch
+                className={`w-6 h-6 lg:hidden ${
+                  pathname === "/" ? "hidden" : "inline"
+                }`}
+              />
+            )}
+          </button>
+
+          {/* Meniu de căutare (condiționat) */}
+          {searchopen && (
+            <div className="absolute top-12 left-0 w-full p-2 bg-white  lg:hidden">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Vreau să cumpăr..."
+                  className="rounded-md px-2 py-2 w-full border border-customBlue placeholder:text-gray-600 outline-4 outline-customBlue"
+                />
+                <button className="text-customBlue px-2 absolute right-0 top-[10px]">
+                  <FaSearch className="text-xl" />
+                </button>
+              </div>
+            </div>
+          )}
           {/* Favorite */}
           <div className="relative">
             <Link href="/favorite">
               <FaHeart className="w-6 h-6" />
             </Link>
+
             <span className="absolute -bottom-[1px] -right-1 bg-black text-xs rounded-full px-1 text-white ">
               {countFavorites()}
             </span>
@@ -88,7 +127,7 @@ export default function NavBar() {
                 <SheetDescription>
                   {categories.map((category) => (
                     <Link href="/produse" key={category.id}>
-                      <span className="flex items-center gap-2 text-xl text-black p-2 group">
+                      <span className="flex lg:items-center items-end gap-2 text-xl text-black p-2 group">
                         <span className="text-customBlue">
                           {React.createElement(category.icon)}
                         </span>
