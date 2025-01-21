@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
-    <div className="border-2 border-black bg-white hover:border-customBlue rounded-md flex flex-col items-center p-2 relative">
+    <div className="border-2 border-gray-300 bg-white hover:border-customBlue rounded-md flex flex-col items-center p-2 relative">
       <Link href={`/produse/${product.id}`}>
         <Image
           src={product.image}
@@ -29,17 +29,18 @@ export default function ProductCard({ product }) {
         )}
       </button>
       <div className="text-center">
-        <p className="text-sm text-gray-500 border-b border-gray-500 pb-1">
-          Vânzător: {product.shop}
+        <p className="text-xs lg:text-sm text-gray-900 border-b border-gray-500 pb-1 font-montserrat">
+          {product.shop}
         </p>
-        <h2 className="font-bold line-clamp-2 overflow-hidden mt-1">
+        <h2 className="font-light text-sm line-clamp-2 overflow-hidden mt-1 text-gray-800 font-montserrat">
           {product.title}
         </h2>
-        <p className="text-lg font-bold mt-1">{product.price} RON</p>
+        <p className="text-lg font-semibold mt-1">
+          {product.price} <span className="text-xs font-thin">RON</span>
+        </p>
       </div>
-      <button className="bg-customBlue text-white md:px-2 sm:px-2 px-1 py-1 my-1 rounded-md text-sm sm:text-base">
-        Cumpără acum
-        <FaCartPlus className="w-4 h-4 sm:w-5 sm:h-5 inline ml-2" />
+      <button className="bg-customBlue text-white  px-8 py-1 my-1 rounded-md text-sm sm:text-base font-montserrat">
+        Cumpără
       </button>
     </div>
   );

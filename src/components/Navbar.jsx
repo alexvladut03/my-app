@@ -59,7 +59,7 @@ export default function NavBar() {
             <input
               type="text"
               placeholder="Vreau să cumpăr..."
-              className="rounded-md pl-2 pr-12 py-2 w-full placeholder:text-gray-600 outline-customBlue"
+              className="rounded-md font-poppins pl-2 pr-12 py-2 w-full placeholder:text-gray-600 outline-customBlue"
             />
             <button className="absolute text-customBlue right-10 px-4 text-xl">
               <FaSearch />
@@ -121,13 +121,13 @@ export default function NavBar() {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle className="border-b-2 border-customBlue text-center text-2xl ">
+                <SheetTitle className="border-b-2 border-customBlue sm:text-center sm:text-xl text-lg font-montserrat">
                   Categoriile noastre
                 </SheetTitle>
                 <SheetDescription>
                   {categories.map((category) => (
                     <Link href="/produse" key={category.id}>
-                      <span className="flex lg:items-center items-end gap-2 text-xl text-black p-2 group">
+                      <span className="flex items-center gap-2 text-xl text-black p-2 group font-poppins">
                         <span className="text-customBlue">
                           {React.createElement(category.icon)}
                         </span>

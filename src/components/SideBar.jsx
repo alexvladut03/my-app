@@ -22,7 +22,9 @@ export default function SideBar() {
 
   return (
     <div className="lg:pr-4 text-gray-800">
-      <h3 className="text-lg font-semibold">Interval de preț</h3>
+      <h2 className="text-lg font-semibold font-montserrat">
+        Interval de preț
+      </h2>
       <div className="mt-4">
         <Range
           step={STEP}
@@ -59,7 +61,7 @@ export default function SideBar() {
           )}
         />
       </div>
-      <div className="flex justify-between items-center mt-4 text-sm border-b-2 border-gray-300 pb-4">
+      <div className="flex justify-between items-center mt-4 text-md border-b-2 border-gray-300 pb-4 font-poppins">
         <span>
           Pret: {priceRange[0]} RON - {priceRange[1]} RON
         </span>
@@ -71,7 +73,9 @@ export default function SideBar() {
       {/* Filtrare după categorie */}
       <div className="mt-4 border-b-2 border-gray-300 pb-4 ml-2">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-lg font-semibold">Filtrează după categorie</h3>
+          <h3 className="text-lg font-semibold font-montserrat">
+            Filtrează după categorie
+          </h3>
           <div
             onClick={() => setIsCategoryOpen(!isCategoryOpen)}
             className="cursor-pointer"
@@ -91,13 +95,13 @@ export default function SideBar() {
           <input
             type="text"
             placeholder="Cauta categorie"
-            className="rounded-md px-2 py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
+            className="rounded-md px-2 font-poppins py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
           />
           <div className="flex flex-col max-h-36 overflow-y-scroll">
             {categories.map((category, index) => (
               <label key={index} className="flex items-center space-x-2">
                 <Checkbox className="h-4 w-4" />
-                <span>{category.name}</span>
+                <span className="font-poppins">{category.name}</span>
               </label>
             ))}
           </div>
@@ -107,7 +111,9 @@ export default function SideBar() {
       {/* Filtrare după brand */}
       <div className="mt-4 border-b-2 border-gray-300 pb-4 ml-2">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-lg font-semibold">Filtrează după brand</h3>
+          <h3 className="text-lg font-semibold font-poppins">
+            Filtrează după brand
+          </h3>
           <div
             onClick={() => setIsBrandOpen(!isBrandOpen)}
             className="cursor-pointer"
@@ -127,13 +133,13 @@ export default function SideBar() {
           <input
             type="text"
             placeholder="Cauta brand"
-            className="rounded-md px-2 py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
+            className="rounded-md font-poppins px-2 py-1 w-full bg-transparent placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
           />
           <div className="flex flex-col max-h-36 overflow-y-scroll">
             {brands.map((brand, index) => (
               <label key={index} className="flex items-center space-x-2">
                 <Checkbox className="h-4 w-4" />
-                <span>{brand}</span>
+                <span className="font-poppins">{brand}</span>
               </label>
             ))}
           </div>
@@ -143,7 +149,9 @@ export default function SideBar() {
       {/* Filtrare după vânzător */}
       <div className="mt-4 border-b-2 border-gray-300 pb-4 ml-2">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-lg font-semibold">Filtrează după vânzător</h3>
+          <h3 className="text-lg font-semibold font-poppins">
+            Filtrează după vânzător
+          </h3>
           <div
             onClick={() => setIsSellerOpen(!isSellerOpen)}
             className="cursor-pointer"
@@ -163,13 +171,13 @@ export default function SideBar() {
           <input
             type="text"
             placeholder="Cauta vanzator"
-            className="rounded-md px-2 py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
+            className="rounded-md font-poppins px-2 py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
           />
           <div className="flex flex-col max-h-36 overflow-y-scroll">
             {sellers.map((seller, index) => (
               <label key={index} className="flex items-center space-x-2">
                 <Checkbox className="h-4 w-4" />
-                <span>{seller}</span>
+                <span className="font-poppins">{seller}</span>
               </label>
             ))}
           </div>

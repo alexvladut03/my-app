@@ -32,7 +32,7 @@ export default function Products() {
     setOpenFilter(true);
   };
   return (
-    <section className="bg-[#F7F7F7] px-4 lg:px-0">
+    <section className="bg-[#F7F7F7] px-4 lg:px-0 font-montserrat">
       <Breadcrumb className="max-w-7xl mx-auto pt-5 border-b-2 border-gray-300 pb-2">
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -51,21 +51,24 @@ export default function Products() {
         </div>
 
         <main className="lg:w-3/4 text-black">
-          <h1 className="text-2xl font-semibold text-customBlue block lg:hidden mb-2">
+          <h1 className="text-2xl text-black block lg:hidden mb-2 font-montserrat">
             Cautarea ta
           </h1>
           <div className="flex items-center justify-between gap-4 rounded-md">
-            <h1 className="text-2xl font-semibold text-customBlue hidden lg:block">
+            <h1 className="text-3xl text-black hidden lg:block font-montserrat">
               Cautarea ta
             </h1>
             <Select>
-              <SelectTrigger className="lg:hidden" onClick={handleFilter}>
+              <SelectTrigger
+                className="lg:hidden font-montserrat"
+                onClick={handleFilter}
+              >
                 <SelectValue placeholder="Filtrare" />
               </SelectTrigger>
             </Select>
 
             <Sheet open={openFilter} onOpenChange={setOpenFilter}>
-              <SheetContent side="bottom" className="h-2/3 overflow-y-scroll">
+              <SheetContent side="bottom" className="h-2/3 overflow-y-scroll ">
                 <SheetHeader>
                   <SheetTitle>Filtrare Produse</SheetTitle>
                 </SheetHeader>
@@ -73,11 +76,11 @@ export default function Products() {
               </SheetContent>
             </Sheet>
             <Select>
-              <SelectTrigger className="lg:w-[228px]">
+              <SelectTrigger className="lg:w-[228px] font-montserrat">
                 <SelectValue placeholder="Sortare" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="De la A la Z">De la A la Z</SelectItem>
+                <SelectItem value="De la A la Z ">De la A la Z</SelectItem>
                 <SelectItem value="Pret crescator">Pret crescator</SelectItem>
                 <SelectItem value="Pret descrescator">
                   Pret descrescator

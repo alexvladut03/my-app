@@ -14,12 +14,25 @@ export const metadata = {
   title: "NextStep",
   description: "NextStep APP",
 };
+import { Montserrat, Poppins } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["500", "800"],
+  variable: "--font-montserrat",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["500", "800"],
+  variable: "--font-poppins",
+});
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${montserrat.variable} ${poppins.variable}`}
       >
         <Providers>
           <NavBar />

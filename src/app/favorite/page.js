@@ -19,7 +19,7 @@ export default function Favorite() {
 
   return (
     <section className="bg-white shadow-md p-4 rounded-md text-center">
-      <Breadcrumb className="max-w-7xl mx-auto pt-1 border-b-2 border-gray-300 pb-2">
+      <Breadcrumb className="max-w-7xl mx-auto pt-1 border-b-2 border-gray-300 pb-2 font-montserrat">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Acasa</BreadcrumbLink>
@@ -31,10 +31,10 @@ export default function Favorite() {
         </BreadcrumbList>
       </Breadcrumb>
       <div className="max-w-7xl mx-auto min-h-96 py-4">
-        <h2 className="lg:text-4xl text-2xl font-semibold mb-2 text-black">
+        <h2 className="lg:text-4xl text-2xl  font-montserrat mb-2 text-black">
           Produse Favorite
         </h2>
-        <p className="text-gray-600 mb-4 lg:text-lg text-md">
+        <p className="text-gray-600 mb-4 lg:text-lg text-md font-montserrat">
           Acces rapid la produsele tale favorite.
         </p>
 

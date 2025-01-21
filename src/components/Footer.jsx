@@ -12,10 +12,10 @@ export default function Footer() {
         height={500}
         className="w-56 h-12 mx-auto"
       />
-      <button className="px-4 py-1 bg-customBlue text-white rounded-md my-6">
+      <button className="px-4 py-1 bg-customBlue text-white rounded-md my-6 font-poppins">
         <span className="opacity-80"> Obtine cea mai buna oferta</span>
       </button>
-      <div className="flex lg:flex-row flex-col text-center text-black lg:gap-8 gap-2">
+      <div className="flex lg:flex-row flex-col text-center text-black lg:gap-8 gap-2 font-poppins">
         <Link href="/politica-confidentialitate">
           <span>Politica Confidentialitate</span>
         </Link>

@@ -46,7 +46,7 @@ export default function ProductPage({ params }) {
 
   return (
     <section className="bg-white max-w-7xl lg:mx-auto mx-4">
-      <Breadcrumb className="pt-5 border-b-2 border-gray-300 pb-2">
+      <Breadcrumb className="pt-5 border-b-2 border-gray-300 pb-2 font-montserrat">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Acasa</BreadcrumbLink>
@@ -74,51 +74,63 @@ export default function ProductPage({ params }) {
 
         <div className="lg:w-3/4">
           <div className="border-b-2 border-gray-300 mb-4">
-            <h1 className="lg:text-3xl text-2xl font-bold mb-4">
+            <h1 className="lg:text-2xl text-xl font-bold mb-4 font-montserrat">
               {product.title}
             </h1>
-            <h2 className="text-lg font-bold">Detalii:</h2>
-            <p className="text-gray-500 mb-4">{product.title}</p>
-            <p className="text-black font-semibold mb-4">
+            <h2 className="text-lg font-bold font-montserrat">Detalii:</h2>
+            <p className="text-gray-500 mb-4 font-poppins">{product.title}</p>
+            <p className="text-black font-semibold mb-4 font-popins">
               Vândut de: {""}
-              <span className="text-blue-500 underline">{product.shop}</span>
+              <span className="text-blue-500 underline font-popins">
+                {product.shop}
+              </span>
             </p>
           </div>
-          <h3 className="text-2xl font-bold text-red-500">
+          <h3 className="text-2xl font-semibold text-red-500 font-montserrat">
             {product.price} RON{" "}
-            <span className="text-sm text-gray-300">- TVA Inclus</span>
+            <span className="text-sm text-gray-300 font-poppins">
+              - TVA Inclus
+            </span>
           </h3>
-          <span className="text-sm text-gray-300">
+          <span className="text-sm text-gray-300 font-poppins">
             Cel mai mic preț găsit de noi
           </span>
-          <div className="flex gap-4 mt-4">
-            <button className="bg-customBlue text-white px-4 py-1 my-1 rounded-md">
+          <div className="lg:flex grid grid-cols-2 gap-4 mt-4">
+            <button className="bg-customBlue col-span-2 text-white px-4 py-2 my-1 rounded-md font-poppins">
               Cumpără acum
-              <FaCartPlus className="w-6 h-6 inline ml-2" />
+              <FaCartPlus className="w-5 h-5 inline ml-2" />
             </button>
-            <button className="border border-gray-300 text-gray-700 px-4 py-1 my-1 rounded-md ">
-              Compara
-              <FaCodeCompare className="w-6 h-6 inline ml-2" />
-            </button>
-            <button
-              onClick={() => toggleFavorite(product.id)}
-              className="border border-gray-300 text-gray-700 px-4 py-1 my-1 rounded-md"
-            >
-              {isFavorite(product.id) ? (
-                <FaHeart className="w-6 h-6 inline text-customBlue" />
-              ) : (
-                <FaRegHeart className="w-6 h-6 inline" />
-              )}
-            </button>
+            <div className="col-span-2 flex gap-4">
+              <button className="border border-gray-300 w-3/4 text-gray-700 px-4 py-2 my-1 rounded-md font-poppins">
+                Compara
+                <FaCodeCompare className="w-5 h-5 inline ml-2" />
+              </button>
+              <button
+                onClick={() => toggleFavorite(product.id)}
+                className="border border-gray-300 w-1/4 text-gray-700 px-4 py-2 my-1 rounded-md"
+              >
+                {isFavorite(product.id) ? (
+                  <FaHeart className="w-5 h-5 inline text-customBlue" />
+                ) : (
+                  <FaRegHeart className="w-5 h-5 inline" />
+                )}
+              </button>
+            </div>
           </div>
-          <h4 className="text-lg font-bold my-2">Alte Detalii:</h4>
-          <p className="text-gray-400">Brand: Hankook</p>
-          <p className="text-gray-400">Vânzător: {product.shop}</p>
+          <h4 className="text-lg font-bold my-2 font-montserrat">
+            Alte Detalii:
+          </h4>
+          <p className="text-gray-400 font-poppins">Brand: Hankook</p>
+          <p className="text-gray-400 font-poppins">Vânzător: {product.shop}</p>
         </div>
       </div>
       <div className="mt-6 border-t-2 pt-4 border-gray-300">
-        <p className="text-gray-300">S-ar putea sa-ti placa si...</p>
-        <h2 className="text-2xl font-bold text-black ">Produse similare</h2>
+        <p className="text-gray-300 font-poppins">
+          S-ar putea sa-ti placa si...
+        </p>
+        <h2 className="text-2xl font-bold text-black font-montserrat">
+          Produse similare
+        </h2>
         <Carousel
           opts={{
             align: "start",
