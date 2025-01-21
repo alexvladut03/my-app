@@ -79,8 +79,8 @@ export default function ProductPage({ params }) {
             </h1>
             <h2 className="text-lg font-bold font-montserrat">Detalii:</h2>
             <p className="text-gray-500 mb-4 font-poppins">{product.title}</p>
-            <p className="text-black font-semibold mb-4 font-popins">
-              Vândut de: {""}
+            <p className="text-black font-semibold mb-4 font-montserrat">
+              Vandut de: {""}
               <span className="text-blue-500 underline font-popins">
                 {product.shop}
               </span>
@@ -88,22 +88,22 @@ export default function ProductPage({ params }) {
           </div>
           <h3 className="text-2xl font-semibold text-red-500 font-montserrat">
             {product.price} RON{" "}
-            <span className="text-sm text-gray-300 font-poppins">
+            <span className="text-sm text-gray-500 font-poppins font-normal">
               - TVA Inclus
             </span>
           </h3>
-          <span className="text-sm text-gray-300 font-poppins">
+          <span className="text-sm text-gray-500 font-poppins">
             Cel mai mic preț găsit de noi
           </span>
-          <div className="lg:flex grid grid-cols-2 gap-4 mt-4">
+          <div className="lg:flex grid grid-cols-2 gap-1 mt-4">
             <button className="bg-customBlue col-span-2 text-white px-4 py-2 my-1 rounded-md font-poppins">
+              <FaCartPlus className="w-5 h-5 inline mr-2" />
               Cumpără acum
-              <FaCartPlus className="w-5 h-5 inline ml-2" />
             </button>
             <div className="col-span-2 flex gap-4">
               <button className="border border-gray-300 w-3/4 text-gray-700 px-4 py-2 my-1 rounded-md font-poppins">
+                <FaCodeCompare className="w-5 h-5 inline mr-2" />
                 Compara
-                <FaCodeCompare className="w-5 h-5 inline ml-2" />
               </button>
               <button
                 onClick={() => toggleFavorite(product.id)}
@@ -120,12 +120,12 @@ export default function ProductPage({ params }) {
           <h4 className="text-lg font-bold my-2 font-montserrat">
             Alte Detalii:
           </h4>
-          <p className="text-gray-400 font-poppins">Brand: Hankook</p>
-          <p className="text-gray-400 font-poppins">Vânzător: {product.shop}</p>
+          <p className="text-gray-500 font-poppins">Brand: Hankook</p>
+          <p className="text-gray-500 font-poppins">Vânzător: {product.shop}</p>
         </div>
       </div>
       <div className="mt-6 border-t-2 pt-4 border-gray-300">
-        <p className="text-gray-300 font-poppins">
+        <p className="text-gray-500 font-poppins">
           S-ar putea sa-ti placa si...
         </p>
         <h2 className="text-2xl font-bold text-black font-montserrat">
@@ -139,7 +139,7 @@ export default function ProductPage({ params }) {
           }}
           className="my-8"
         >
-          <CarouselContent>
+          <CarouselContent className="m-2">
             {products.map((product) => (
               <CarouselItem
                 key={product.id}

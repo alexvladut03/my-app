@@ -33,11 +33,11 @@ export default function NavBar() {
       className={`${
         pathname === "/"
           ? "bg-white"
-          : "bg-gradient-to-r from-white lg:from-50% from-40% to-customBlue lg:to-60% to-40% drop-shadow-[0_4px_6px_rgba(0,139,234,0.3)]"
+          : "bg-gradient-to-r from-white lg:from-50% from-45% to-customBlue lg:to-60% to-45% drop-shadow-[0_4px_6px_rgba(0,139,234,0.3)]"
       }`}
     >
       <div
-        className={`lg:max-w-7xl flex items-center lg:mx-auto lg:h-16 h-12 mx-4 ${
+        className={`lg:max-w-7xl flex items-center justify-center lg:mx-auto lg:h-16 h-12 mx-4 ${
           pathname === "/" ? "justify-between" : ""
         }`}
       >
@@ -59,7 +59,7 @@ export default function NavBar() {
             <input
               type="text"
               placeholder="Vreau să cumpăr..."
-              className="rounded-md font-poppins pl-2 pr-12 py-2 w-full placeholder:text-gray-600 outline-customBlue"
+              className="rounded-md font-poppins pl-3 pr-12 py-2 w-full placeholder:text-gray-600 outline-customBlue"
             />
             <button className="absolute text-customBlue right-10 px-4 text-xl">
               <FaSearch />

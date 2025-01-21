@@ -65,7 +65,7 @@ export default function SideBar() {
         <span>
           Pret: {priceRange[0]} RON - {priceRange[1]} RON
         </span>
-        <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">
+        <button className="px-3 py-1 bg-customBlue text-white rounded hover:bg-blue-600">
           FILTREAZĂ
         </button>
       </div>
@@ -95,7 +95,7 @@ export default function SideBar() {
           <input
             type="text"
             placeholder="Cauta categorie"
-            className="rounded-md px-2 font-poppins py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
+            className="rounded-md px-2 font-poppins bg-white py-1 w-full  placeholder:text-gray-500 outline-customBlue border-2 border-gray-300 mb-2"
           />
           <div className="flex flex-col max-h-36 overflow-y-scroll">
             {categories.map((category, index) => (
@@ -133,7 +133,7 @@ export default function SideBar() {
           <input
             type="text"
             placeholder="Cauta brand"
-            className="rounded-md font-poppins px-2 py-1 w-full bg-transparent placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
+            className="rounded-md px-2 font-poppins bg-white py-1 w-full  placeholder:text-gray-500 outline-customBlue border-2 border-gray-300 mb-2"
           />
           <div className="flex flex-col max-h-36 overflow-y-scroll">
             {brands.map((brand, index) => (
@@ -171,7 +171,7 @@ export default function SideBar() {
           <input
             type="text"
             placeholder="Cauta vanzator"
-            className="rounded-md font-poppins px-2 py-1 w-full bg-gray-300 placeholder:text-gray-900 outline-customBlue border-2 border-gray-500 mb-2"
+            className="rounded-md px-2 font-poppins bg-white py-1 w-full  placeholder:text-gray-500 outline-customBlue border-2 border-gray-300 mb-2"
           />
           <div className="flex flex-col max-h-36 overflow-y-scroll">
             {sellers.map((seller, index) => (

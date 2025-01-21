@@ -17,7 +17,7 @@ export default function Hero() {
         <input
           type="text"
           placeholder="Vreau să cumpăr..."
-          className="rounded-md px-2 py-2 lg:w-96 w-full placeholder:text-gray-600 outline-4 outline-customBlue font-poppins"
+          className="rounded-md px-3 py-2 lg:w-96 w-full placeholder:text-gray-600 outline-4 outline-customBlue font-poppins"
         />
         <button className="text-customBlue px-2 absolute right-0 top-[10px]">
           <FaSearch className="text-xl" />

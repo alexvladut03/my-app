@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
-    <div className="border-2 border-gray-300 bg-white hover:border-customBlue rounded-md flex flex-col items-center p-2 relative">
+    <div className=" shadow-sm shadow-gray-300 bg-white hover:shadow-customBlue rounded-md flex flex-col items-center p-2 relative">
       <Link href={`/produse/${product.id}`}>
         <Image
           src={product.image}
@@ -32,16 +32,20 @@ export default function ProductCard({ product }) {
         <p className="text-xs lg:text-sm text-gray-900 border-b border-gray-500 pb-1 font-montserrat">
           {product.shop}
         </p>
-        <h2 className="font-light text-sm line-clamp-2 overflow-hidden mt-1 text-gray-800 font-montserrat">
-          {product.title}
-        </h2>
+        <Link href={`/produse/${product.id}`}>
+          <h2 className="font-light text-sm line-clamp-2 overflow-hidden mt-1 text-gray-800 font-montserrat">
+            {product.title}
+          </h2>
+        </Link>
         <p className="text-lg font-semibold mt-1">
           {product.price} <span className="text-xs font-thin">RON</span>
         </p>
       </div>
-      <button className="bg-customBlue text-white  px-8 py-1 my-1 rounded-md text-sm sm:text-base font-montserrat">
-        Cumpără
-      </button>
+      <Link href="https://emag.ro/" target="_blank">
+        <button className="bg-customBlue hover:bg-blue-600 text-white  px-8 py-1 my-1 rounded-md text-sm sm:text-base font-montserrat">
+          Cumpără
+        </button>
+      </Link>
     </div>
   );
 }
