@@ -46,7 +46,7 @@ export default function ProductPage({ params }) {
 
   return (
     <section className="bg-white max-w-7xl lg:mx-auto mx-4">
-      <Breadcrumb className="pt-5 border-b-2 border-gray-300 pb-2 font-montserrat">
+      <Breadcrumb className="truncate pt-5 border-b-2 border-gray-300 pb-2 font-montserrat">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Acasa</BreadcrumbLink>
